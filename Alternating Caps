@@ -2,7 +2,7 @@ function altCaps(origString) {
     let altString = '';                     // Initialize the final-product string we'll be building.
     let upper = false;                      // Initialize the boolean "uppercase or lowecase?" toggler.
 
-    for (i=0; i<origString.length; i++) {
+    for (i=0; i<origString.length; i++) {   // Loop through the string one character at a time
         if (origString[i] === ' '){         // If we encounter a space, just add it and iterate to the next character.
             altString += ' ';
         }
