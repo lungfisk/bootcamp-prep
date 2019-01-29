@@ -1,0 +1,23 @@
+function altCaps(origString) {
+    let altString = '';        						// Initialize the final-product string we'll be building.
+    let upper = false;         						// Initialize the boolean "uppercase or lowecase?" toggler.
+
+    for (i=0; i<origString.length; i++) {
+        if (origString[i] === ' '){     	// If we encounter a space, just add it and iterate to the next character.
+            altString += ' ';
+        }
+        else{							
+            if (upper === false) {   											
+                altString += origString[i].toLowerCase(); // If the boolean is currently false, we lowercase the character 
+            }
+            else {
+                altString += origString[i].toUpperCase(); // If not, we uppercase
+            }
+            upper = !upper; 															// Then toggle the boolean and reiterate the loop until done!
+        }
+    }
+    return altString; 																		// Return the finished product!
+}
+
+
+console.log(altCaps('I dare you to ruin this VERY carefully capitalized sentence!'));  // Give it a whirl.
