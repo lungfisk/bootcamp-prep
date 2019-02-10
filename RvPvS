@@ -1,0 +1,38 @@
+const playGame = userChoice => {
+  let computerChoice = getComputerChoice();
+  userChoice=userChoice.toLowerCase();
+  console.log(`You throw ${userChoice}.\nComputer throws ${computerChoice}.\n`)
+  console.log(determineWinner(userChoice,computerChoice));
+}
+
+
+const getComputerChoice = () => {
+  switch(Math.floor(Math.random()*3)){
+    case 0: return 'rock'
+    case 1: return 'paper'
+    case 2: return 'scissors'
+	}
+}
+
+const determineWinner = (userChoice, computerChoice) => {
+  if (userChoice == computerChoice){
+    return 'Tie!';
+  }
+  switch (userChoice){
+    case 'rock': 
+      if (computerChoice == 'scissors')  { return 'User wins.' }
+      else { return 'Computer wins'}
+    case 'paper': 
+      if (computerChoice == 'rock')      { return 'User wins.' }
+      else { return 'Computer wins'}
+    case 'scissors': 
+      if (computerChoice == 'paper')     { return 'User wins.' }
+      else { return 'Computer wins'}
+    default:
+      return 'Your throw was invalid!'
+    
+  }
+}   
+
+
+playGame('RoCk');
