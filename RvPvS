@@ -1,10 +1,9 @@
 const playGame = userChoice => {
-  let computerChoice = getComputerChoice();
   userChoice=userChoice.toLowerCase();
+  let computerChoice = getComputerChoice();
   console.log(`You throw ${userChoice}.\nComputer throws ${computerChoice}.\n`)
   console.log(determineWinner(userChoice,computerChoice));
 }
-
 
 const getComputerChoice = () => {
   switch(Math.floor(Math.random()*3)){
